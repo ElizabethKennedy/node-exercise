@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 
-// ensures that env variables are loaded
 const envFound = dotenv.config();
 
 if (!envFound) {

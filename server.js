@@ -1,12 +1,20 @@
 import express from "express";
 import config from "./config";
-// TODO: import router from routes/
+import apiRouter from "./routes";
+import morgan from "morgan";
+import path from "path";
 
 const app = express();
 
 app.use(express.json());
 
-// TODO: use the imported router to handle all requests
+
+app.use(morgan("common"));
+
+app.use(express.static(path.join(__dirname, "./public")));
+
+
+app.use("/api", apiRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);
