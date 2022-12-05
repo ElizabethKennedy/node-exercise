@@ -1,3 +1,5 @@
+import config from '../config';
+import mysql from'mysql';
 import express from "express";
 import userRouter from "./users.route";
 

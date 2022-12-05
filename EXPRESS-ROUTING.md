@@ -1,8 +1,4 @@
----
-title: "Exercise: Express Routing"
-slug: "/express-routing-exercise"
-description: Express Routing Exercise with Steps
-keywords: [javascript, node.js, express.js, routing]
+
 ---
 
 ## Objective

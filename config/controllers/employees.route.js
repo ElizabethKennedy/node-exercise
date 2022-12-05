@@ -7,7 +7,7 @@ router.get("/:id?", async (req, res, next) => {
     try {
        let { id } = req.params;
        let data;
-       
+
        if (id) {
         data = await employees.findOne(parseInt(id));
        }else {
@@ -41,5 +41,16 @@ router.put("/:id", async (req, res, next) => {
         next(err);
     }
 });
+
+router.delete("/:id", async (request, response, next) => {
+    try {
+        let { id } = request.params;
+        let data = await employees.removeOne(id);
+        response.json(data);
+    } catch (err) {
+        next (err);
+    }
+});
+
 
 export default router;

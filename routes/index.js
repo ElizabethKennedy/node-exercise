@@ -1,3 +1,20 @@
+import express from "express";
+import userRouter from "./user.route.js";
+import employeeRouter from "./employees.route";
+
+const router = express.Router();
+
+router.get("/test", (req, res) => {
+  res.send("working");
+});
+
+
+router.use("/users", userRouter);
+
+
+router.use("/employees", employeeRouter);
+
+export default router;
 
 class MockData {
   constructor(id, firstName, lastName, role = null) {
@@ -128,7 +145,6 @@ class MockDB {
 
 let db = new MockDB();
 
-export default db;
 
 
 
