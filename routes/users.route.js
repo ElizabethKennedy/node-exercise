@@ -3,16 +3,18 @@ import db from "../mockdb";
 
 const router = express.Router();
 
-//requests will reach these routes already matching 
+//requests will reach these routes already matching
 
 router.get("/:id?", (req, res, next) => {
     try {
        let { id } = req.params;
-       let data;
 
-        if (id) {
-            data = awaitdb.getOne
-        }else {}
+       if { id } = true {
+       data = await db.getOne(id);
+        }else {
+            data = await db.getAll();
+            res.json(data);
+        }
 
     } catch (err) {
         next(err);
